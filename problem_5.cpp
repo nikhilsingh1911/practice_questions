@@ -1,6 +1,19 @@
 // pascal triangle
 // but i failed to understand why there are 2 elements in first row..
 // have to do in vectors also....
+
+
+
+// this is also a way to do this and without have 2 one in first row.........
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < n; j++)
+//     {
+//         cout << num << " ";
+//         num = num * (i - k) / (k + 1);
+//     }
+// }
+
 // #include <iostream>
 // #include <vector>
 // using namespace std;
@@ -27,7 +40,7 @@
 //     int value[10][10];
 //     for(int i=0;i<m;i++){
 //         for(int j=0;j<n;j++){
-//             value[i][j] = fact(i)/(fact(j)*fact(i-j));
+//            value[i][j] = fact(i)/(fact(j)*fact(i-j));
 //         }
 //     }
 //     for(int i=0;i<m;i++){
@@ -54,21 +67,26 @@
 //      always remeber to include vector header file whenever you are using vectors
 
 // }
-                    // or
+// or
 
 #include <iostream>
 #include <vector>
 using namespace std;
-vector<vector<int>> pascal_triangle(int n){
+vector<vector<int>> pascal_triangle(int n)
+{
     vector<vector<int>> pascal(n);
-    for(int i=0;i<n;i++){
-        pascal[i].resize(i+1);
-        for(int j=0;j<i+1;j++){
-            if(j==0 || j==i){
-                pascal[i][j]=1;
+    for (int i = 0; i < n; i++)
+    {
+        pascal[i].resize(i + 1);
+        for (int j = 0; j < i + 1; j++)
+        {
+            if (j == 0 || j == i)
+            {
+                pascal[i][j] = 1;
             }
-            else{
-            pascal[i][j]=pascal[i-1][j]+pascal[i-1][j-1];
+            else
+            {
+                pascal[i][j] = pascal[i - 1][j] + pascal[i - 1][j - 1];
             }
         }
     }
