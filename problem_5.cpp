@@ -3,7 +3,6 @@
 // have to do in vectors also....
 
 
-
 // this is also a way to do this and without have 2 one in first row.........
 // for (int i = 0; i < m; i++)
 // {
