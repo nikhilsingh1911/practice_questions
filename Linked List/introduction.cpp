@@ -49,7 +49,18 @@ void display(Node *head)
     }
     cout << "NULL" << endl;
 }
-
+void updateAtPosition(Node *head, int k, int val)
+{
+    Node *temp = head;
+    int currposition = 0;
+    while (currposition != k)
+    {
+        temp = temp->next;
+        currposition++;
+    }
+    // temp will be pointing to Kth node
+    temp->val = val;
+}
 void insertAtPosition(Node *&head, int val, int pos)
 {
     if (pos == 0)
@@ -57,10 +68,11 @@ void insertAtPosition(Node *&head, int val, int pos)
         insertAtHead(head, val);
         return;
     }
-    Node* new_node = new Node(val);
-    Node* temp = head; 
+    Node *new_node = new Node(val);
+    Node *temp = head;
     int currPos = 0;
-    while(currPos!= pos-1){
+    while (currPos != pos - 1)
+    {
         temp = temp->next;
         currPos++;
     }
@@ -78,6 +90,38 @@ void insertAtTail(Node *&head, int val)
     }
     temp->next = new_node;
 }
+void deleteAthead(Node *&head)
+{
+    Node *temp = head;
+    head = head->next;
+    free(temp);
+}
+
+void deleteAtend(Node *&head)
+{
+    Node *temp = head;
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    Node* last = temp->next;
+
+    temp->next = NULL;
+    free(last);
+}
+void deleteAtPosition(Node* head, int pos){
+    if(pos==0){
+        deleteAthead(head);
+        return;
+    }
+    Node* temp = head;
+    int cur_pos = 0;
+    while(cur_pos!=pos-1){
+        temp = temp->next;
+        cur_pos++;
+    }
+    temp->next = temp->next->next;
+}
 int main()
 {
     // Node *n = new Node(1);
@@ -91,8 +135,18 @@ int main()
     insertAtHead(head, 2);
     display(head);
     insertAtHead(head, 1);
+    insertAtHead(head, 5);
+    insertAtHead(head, 6);
     insertAtPosition(head, 3, 2);
     display(head);
     insertAtTail(head, 8);
+    display(head);
+    updateAtPosition(head, 1, 69);
+    display(head);
+    deleteAthead(head);
+    display(head);
+    deleteAtend(head);
+    display(head);
+    deleteAtPosition(head , 2);
     display(head);
 }
