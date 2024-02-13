@@ -36,8 +36,10 @@ public:
 void insertAtHead(Node *&head, int value)
 {
     Node *new_node = new Node(value);
+//new_node is the node that is being created now and which will store the data in it..
     new_node->next = head;
     head = new_node;
+//here head will store the new_node address
 }
 void display(Node *head)
 {
@@ -55,6 +57,7 @@ void updateAtPosition(Node *head, int k, int val)
     int currposition = 0;
     while (currposition != k)
     {
+        //after this loop temp will point to the position where you want to updated the value.
         temp = temp->next;
         currposition++;
     }
@@ -73,6 +76,7 @@ void insertAtPosition(Node *&head, int val, int pos)
     int currPos = 0;
     while (currPos != pos - 1)
     {
+//this loop will point the temp to the position-1.
         temp = temp->next;
         currPos++;
     }
