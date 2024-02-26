@@ -23,4 +23,16 @@ int main(){
     for(auto i: m ){
         cout<< i.first<<" "<< i.second<< endl;
     }
+
+    // to check the element is present or not we use . count(value);
+    // to erase the value we use .erase(value of key) method
+    //in map finding , inserting, erasing etc have the time complexity of O(logn)..
+    //find return the iterator of the particular data
+
+
+    auto it = m.find(7);
+
+    for(auto i = it; i!=m.end(); i++){
+        cout<<(*i).first<<endl;
+    }
 }
