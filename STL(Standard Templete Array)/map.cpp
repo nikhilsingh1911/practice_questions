@@ -21,7 +21,7 @@ int main(){
     m.insert({7, "mr.been"});
     cout<<"After inserting with new way: "<<endl;
     for(auto i: m ){
-        cout<< i.first<<" "<< i.second<< endl;
+        cout<< i.first<<" "<< i.second <<endl;
     }
 
     // to check the element is present or not we use . count(value);

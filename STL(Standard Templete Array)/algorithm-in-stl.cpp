@@ -20,6 +20,10 @@ int main(){
     int b = 7;
     cout<<"max : "<<max(a, b)<<endl;
     cout<<"min : "<<min(a, b)<<endl;
+    for(auto i: v){
+        cout<<i<<" ";
+    }
+    cout<<endl;
     // to rotate the vector
     cout<<"After rotate the vector is : "<< endl;
     rotate(v.begin(), v.begin()+1, v.end());
