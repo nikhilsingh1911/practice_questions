@@ -7,7 +7,7 @@ using namespace std;
 // type: - (1) Public, (2) Private, (3) Protected
 
 // PUBLIC:- all the properties after public can be accessed anywhere in the program..
-// PRIVATE:- all the properties after public cannot be accessed outside the class or friend class of that class..
+// PRIVATE:- all the properties after private cannot be accessed outside the class or friend class of that class..
 // PROTECTED:-
 
 class Hero
@@ -19,7 +19,11 @@ private:
 public:
     Hero()
     {
-        cout << "Constructor  Created" << endl;
+        cout << "Constructor Created" << endl;
+    }
+
+    Hero(int para){
+        health = para;
     }
 
     // prorperties
