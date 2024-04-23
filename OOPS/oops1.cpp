@@ -14,7 +14,7 @@ class Hero
 {
 private:
     int health;
-    // we can't access this so we will use getert ans setter
+    // we can't access this so we will use getter ans setter
 
 public:
     Hero()
@@ -66,7 +66,7 @@ int main()
     cout << "The value of level in Hero is: " << h1.level << endl;
     cout << "Size: " << sizeof(h1) << endl;
     // 1. output is 4 because the properties of class hero is value which is of int type and size of int is 4
-    // 2. If the class do not have any properties in it then the size if 1
+    // 2. If the class do not have any properties in it then the size is 1
 
     h1.sethealth(81);
     cout << "Hero health is: " << h1.gethealth() << endl;
