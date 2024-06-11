@@ -25,7 +25,7 @@ void insertAtEnd(Node *tail, int d)
 {
    Node *temp = new Node(d);
    tail->next = temp;
-   tail = temp;
+   tail = tail->next;
 }
 // to print every node of the linked list
 void printNode(Node *head)
@@ -96,7 +96,9 @@ int main()
    printNode(head);
    insertAtHead(head, 3);
    printNode(head);
-   insertAtEnd(tail, 7);
+   insertAtHead(head, 7);
+   printNode(head);
+   insertAtHead(head, 14);
    printNode(head);
    Node *middleElement = getMiddleElement(head);
    cout << "The middle element of the linked list is : " << middleElement->data << endl;
