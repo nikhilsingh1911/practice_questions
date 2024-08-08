@@ -69,6 +69,7 @@ int main()
     cin >> target;
     vector<int> reslt;
     int lb = lowerbound(vec, target);
+    cout << "Lb is" << lb;
     if (vec[lb] != target)
     {
         reslt.push_back(-1);
