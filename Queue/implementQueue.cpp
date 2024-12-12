@@ -78,3 +78,8 @@ public:
       }
    }
 };
+
+int main(){
+   Queue q;
+   
+}

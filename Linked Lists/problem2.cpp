@@ -100,6 +100,8 @@ int main()
    printNode(head);
    insertAtHead(head, 14);
    printNode(head);
+   Node *getMid = middleEle(head, 4);
+   cout << "getMidEle is " << getMid->data << endl;
    Node *middleElement = getMiddleElement(head);
    cout << "The middle element of the linked list is : " << middleElement->data << endl;
    return 0;
