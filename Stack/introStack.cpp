@@ -102,8 +102,8 @@ int main()
    s.push(3);
 
    cout << s.top() << endl;
-   // s.pop();
-   // s.pop();
+   s.pop();
+   s.pop();
    // s.pop();
    cout << s.top() << endl;
    if (s.empty())
