@@ -5,8 +5,6 @@
 using namespace std;
 // implementation of stack..(Not STL)
 
-//
-//
 // Stack implementation using Linked list
 class Stack
 {
