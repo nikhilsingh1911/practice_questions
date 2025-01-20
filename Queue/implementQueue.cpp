@@ -1,74 +1,83 @@
 // implementing the queue using array
 
 #include <iostream>
-
 using namespace std;
-
 class Queue
 {
 
-   int *arr;
-   int front;
-   int rear;
    int size;
+   int frnt;
+   int last;
+   int *arr;
 
 public:
    Queue()
    {
       size = 100001;
       arr = new int[size];
-      front = 0;
-      rear = 0;
+      frnt = 0;
+      last = 0;
    }
-
-   void push(int d)
+   void push(int data)
    {
-      if (rear == size)
+      if (last == size)
       {
-         cout << "Queue is full";
+         cout << "Queue is FUll" << endl;
       }
       else
       {
-         arr[rear] = d;
-         rear++;
+         arr[last] = data;
+         last++;
       }
    }
-
-   int pop(int d)
+   void pop()
    {
-      if (front == rear)
+      if (frnt == last)
       {
-         return -1;
+         // in case we have to return the deleted element.
+         // return -1;
+         cout << "Queur is Already Empty" << endl;
       }
       else
       {
-         int ans = arr[front];
-         arr[front] = -1;
-         front++;
-         if (front == rear)
+         // int ans = arr[front];
+         arr[frnt] = -1;
+         frnt++;
+         if (frnt == last)
          {
-            front = 0;
-            rear = 0;
+            frnt = 0;
+            last = 0;
          }
-         return ans;
+         // return ans; //this is when we have to return the delete element
       }
    }
-
-   int Front()
+   int front()
    {
-      if (front == rear)
+      if (frnt == last)
       {
+         cout << "Queue is empty";
          return -1;
       }
       else
       {
-         return arr[front];
+         return arr[frnt];
       }
    }
-
-   bool isempty()
+   int rear()
    {
-      if (front == rear)
+      if (last == frnt)
+      {
+         cout << "No element in the Queue" << endl;
+         return -1;
+      }
+      else
+      {
+         return arr[last - 1];
+      }
+   }
+   bool isEmpty()
+   {
+      if (frnt == last)
       {
          return true;
       }
@@ -79,7 +88,14 @@ public:
    }
 };
 
-int main(){
+int main()
+{
    Queue q;
-   
+   q.push(4);
+   q.push(10);
+   q.push(2);
+   q.push(8);
+   q.push(5);
+   cout << "The first Element of the Queue " << q.front() << endl;
+   cout << "The Last Element of the Queue " << q.rear() << endl;
 }
